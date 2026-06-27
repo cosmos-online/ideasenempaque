@@ -1,0 +1,11 @@
+/* Ideas Empaque e Impresión — Estilos globales */
+/* Paleta basada en sitio viejo: color/default.css */
+
+:root {
+    --ie-primary:    #e8700a;  /* naranja principal del sitio viejo */
+    --ie-dark:       #333333;
+    --ie-light:      #f8f8f8;
+    --ie-border:     #dddddd;
+}
+
+/* Tipografías: Google Fonts — Open Sans (body) + Handlee (acento) */

@@ -1,0 +1,20 @@
+# Credenciales — NUNCA commitear
+ideasenempaque/.env
+*.env
+.env
+
+# Media uploads
+public_html/assets/uploads/*
+!public_html/assets/uploads/.gitkeep
+
+# Dependencias
+/vendor/
+/node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+*.cache
+.vscode/settings.json
+.idea/
