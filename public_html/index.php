@@ -2,148 +2,276 @@
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/productos-data.php';
 
-$pageTitle = 'Ideas Empaque e Impresión, S.A. de C.V. — Fabricantes de Bolsas de Celofán';
-$pageDesc  = 'Fabricantes y distribuidores de bolsas de polipropileno, polietileno, papel kraft, cintas para empaque y más. +13 años en la industria. Empresa 100% mexicana.';
+$pageTitle = 'Ideas Empaque e Impresión — Fabricantes de Bolsas de Empaque en México';
+$pageDesc  = 'Fabricantes y distribuidores de bolsas de polipropileno, papel kraft, ziplock, cintas y materiales de empaque. +13 años de experiencia. Ciudad de México.';
 
-// Productos destacados para el home (primeros 8)
 $destacados = array_slice($PRODUCTOS, 0, 8, true);
 ?>
 <?php require_once __DIR__ . '/includes/header.php'; ?>
 
-<!-- ── HERO CAROUSEL ── -->
-<div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image:url('<?= APP_URL ?>/assets/img/01.jpg')">
-            <div class="carousel-caption">
-                <h2>Fabricantes de bolsas de celofán</h2>
-                <p>Calidad, precisión y entrega puntual para tu negocio.</p>
-                <a href="<?= APP_URL ?>/productos" class="btn btn-primary mt-2">Ver productos</a>
-            </div>
-        </div>
-        <div class="carousel-item" style="background-image:url('<?= APP_URL ?>/assets/img/02.jpg')">
-            <div class="carousel-caption">
-                <h2>Personalizamos tus empaques</h2>
-                <p>Serigrafía y flexografía a 4, 6 y 8 colores.</p>
-                <a href="<?= APP_URL ?>/bolsas-impresas" class="btn btn-primary mt-2">Bolsas impresas</a>
-            </div>
-        </div>
-        <div class="carousel-item" style="background-image:url('<?= APP_URL ?>/assets/img/03.jpg')">
-            <div class="carousel-caption">
-                <h2>Calidad y atención personalizada</h2>
-                <p>Más de 13 años sirviendo a la industria del empaque.</p>
-                <a href="<?= APP_URL ?>/cotizador" class="btn btn-primary mt-2">Cotiza aquí</a>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
-</div>
-
-<!-- ── INTRO ── -->
-<section class="py-5 bg-white">
-    <div class="container">
-        <div class="row align-items-center g-4">
+<!-- ════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero">
+    <div class="hero-bg" style="background-image:url('<?= APP_URL ?>/assets/img/Banner-productos.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="row">
             <div class="col-lg-7">
-                <h2 class="section-title">Ideas Empaque e Impresión, S.A. de C.V.</h2>
-                <p>Fabricamos bolsas de polipropileno (celofán), conocido también como celofán, un material utilizado en la vida diaria por sus grandes propiedades para proteger cualquier producto a bajo costo.</p>
-                <p>Contamos con más de <strong>13 años en la industria del empaque</strong>. Somos una empresa <strong>100% mexicana</strong> con equipos europeos y asiáticos de última generación que pone a su disposición bolsas de empaque de celofán, así como diversos tipos de materiales.</p>
-                <div class="d-flex flex-wrap gap-3 mt-4">
-                    <a href="<?= APP_URL ?>/productos" class="btn btn-primary px-4">Ver catálogo</a>
-                    <a href="<?= APP_URL ?>/cotizador" class="btn btn-outline-primary px-4">
-                        <i class="bi bi-calculator me-1"></i>Cotizar
+                <div class="hero-label">
+                    <i class="bi bi-patch-check-fill"></i>
+                    Empresa 100% mexicana · +13 años en la industria
+                </div>
+                <h1>
+                    Fabricantes de<br>
+                    <span>bolsas de empaque</span><br>
+                    y materiales industriales
+                </h1>
+                <p class="hero-lead">
+                    Polipropileno, papel kraft, ziplock, Pouch y mucho más.
+                    Producción propia, precios directos y atención personalizada.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="<?= APP_URL ?>/cotizador" class="btn btn-primary btn-lg px-4">
+                        <i class="bi bi-calculator me-2"></i>Cotizar ahora
+                    </a>
+                    <a href="<?= APP_URL ?>/productos" class="btn btn-outline-white btn-lg px-4">
+                        Ver catálogo
                     </a>
                 </div>
-            </div>
-            <div class="col-lg-5">
-                <img src="<?= APP_URL ?>/assets/img/285x286.jpg" alt="Bolsas de celofán" class="img-fluid rounded shadow-sm">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ── CARACTERÍSTICAS ── -->
-<section class="py-5" style="background: var(--ie-light)">
-    <div class="container">
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <div class="p-4">
-                    <i class="bi bi-award display-5 mb-3" style="color:var(--ie-primary)"></i>
-                    <h5>+13 años de experiencia</h5>
-                    <p class="text-muted small">Líderes en la industria del empaque flexible con equipos de última generación.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4">
-                    <i class="bi bi-palette display-5 mb-3" style="color:var(--ie-primary)"></i>
-                    <h5>Impresión personalizada</h5>
-                    <p class="text-muted small">Serigrafía para pocas piezas y flexografía a 4, 6 y 8 colores para tu marca.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4">
-                    <i class="bi bi-geo-alt display-5 mb-3" style="color:var(--ie-primary)"></i>
-                    <h5>Empresa 100% mexicana</h5>
-                    <p class="text-muted small">Producción local, entregas rápidas y atención personalizada a tu proyecto.</p>
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Pedido mínimo 1,000 piezas
+                    </div>
+                    <div class="hero-meta-item">
+                        <i class="bi bi-truck"></i>
+                        Entrega en CDMX y República
+                    </div>
+                    <div class="hero-meta-item">
+                        <i class="bi bi-palette2"></i>
+                        Impresión personalizada
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ── PRODUCTOS DESTACADOS ── -->
-<section class="py-5 bg-white">
+<!-- ════════════════════════════════════════════════════════════
+     STATS BAND
+════════════════════════════════════════════════════════════ -->
+<div class="stats-band">
     <div class="container">
-        <h2 class="section-title text-center">Nuestros productos</h2>
-        <p class="text-center text-muted mb-4">Fabricamos y distribuimos una amplia variedad de empaques para todo tipo de industria.</p>
+        <div class="row align-items-center justify-content-center text-center gy-3">
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-num">+13</span>
+                    <span class="stat-label">Años en la industria</span>
+                </div>
+            </div>
+            <div class="col-auto d-none d-md-block">
+                <div class="stat-sep" style="height:48px"></div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-num">21</span>
+                    <span class="stat-label">Tipos de producto</span>
+                </div>
+            </div>
+            <div class="col-auto d-none d-md-block">
+                <div class="stat-sep" style="height:48px"></div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-num">25</span>
+                    <span class="stat-label">Fichas técnicas</span>
+                </div>
+            </div>
+            <div class="col-auto d-none d-md-block">
+                <div class="stat-sep" style="height:48px"></div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-num">1K</span>
+                    <span class="stat-label">Piezas desde</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     CATEGORÍAS
+════════════════════════════════════════════════════════════ -->
+<section class="py-5 bg-light-ie">
+    <div class="container">
+        <div class="mb-4">
+            <span class="section-label">Nuestro catálogo</span>
+            <h2 class="section-title">4 familias de productos</h2>
+            <p class="section-lead">Desde bolsas de celofán transparente hasta materiales para embalaje industrial.</p>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-6 col-lg-3">
+                <a href="<?= APP_URL ?>/bolsas-de-sello-lateral" class="cat-card">
+                    <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-s-03-03.jpg')"></div>
+                    <div class="cat-card-overlay"></div>
+                    <div class="cat-card-body">
+                        <div class="cat-icon"><i class="bi bi-bag"></i></div>
+                        <div class="cat-title">Bolsas de Celofán</div>
+                        <div class="cat-count">4 productos</div>
+                    </div>
+                    <i class="bi bi-arrow-right cat-arrow"></i>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="<?= APP_URL ?>/productos" class="cat-card">
+                    <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-b-04-03.jpg')"></div>
+                    <div class="cat-card-overlay"></div>
+                    <div class="cat-card-body">
+                        <div class="cat-icon"><i class="bi bi-bag-fill"></i></div>
+                        <div class="cat-title">Bolsas Especiales</div>
+                        <div class="cat-count">8 productos</div>
+                    </div>
+                    <i class="bi bi-arrow-right cat-arrow"></i>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="<?= APP_URL ?>/sobre-con-adhesivo" class="cat-card">
+                    <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-s-01-03.jpg')"></div>
+                    <div class="cat-card-overlay"></div>
+                    <div class="cat-card-body">
+                        <div class="cat-icon"><i class="bi bi-envelope"></i></div>
+                        <div class="cat-title">Sobres</div>
+                        <div class="cat-count">3 productos</div>
+                    </div>
+                    <i class="bi bi-arrow-right cat-arrow"></i>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="<?= APP_URL ?>/cintas-para-empaque" class="cat-card">
+                    <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-p-01-03.jpg')"></div>
+                    <div class="cat-card-overlay"></div>
+                    <div class="cat-card-body">
+                        <div class="cat-icon"><i class="bi bi-box-seam"></i></div>
+                        <div class="cat-title">Otros Materiales</div>
+                        <div class="cat-count">6 productos</div>
+                    </div>
+                    <i class="bi bi-arrow-right cat-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PRODUCTOS DESTACADOS
+════════════════════════════════════════════════════════════ -->
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+            <div>
+                <span class="section-label">Más solicitados</span>
+                <h2 class="section-title mb-0">Productos destacados</h2>
+            </div>
+            <a href="<?= APP_URL ?>/productos" class="btn btn-outline-navy btn-sm px-4">
+                Ver todos <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
         <div class="row g-3">
             <?php foreach ($destacados as $slug => $p): ?>
             <div class="col-6 col-md-4 col-lg-3">
-                <a href="<?= APP_URL ?>/<?= e($slug) ?>" class="text-decoration-none">
-                    <div class="product-card bg-white">
+                <a href="<?= APP_URL ?>/<?= e($slug) ?>" class="product-card">
+                    <div class="product-card-img">
                         <?php if (!empty($p['imagenes'][0])): ?>
                         <img src="<?= APP_URL ?>/assets/img/productos/<?= e($p['imagenes'][0]) ?>"
-                             alt="<?= e($p['nombre']) ?>"
-                             class="product-card-img">
-                        <?php else: ?>
-                        <div class="product-card-img-placeholder">
-                            <i class="bi bi-box-seam"></i>
-                        </div>
+                             alt="<?= e($p['nombre']) ?>" loading="lazy">
                         <?php endif; ?>
-                        <div class="card-body">
-                            <h6 class="card-title"><?= e($p['nombre']) ?></h6>
-                            <p class="card-text"><?= e($p['desc_corta']) ?></p>
+                        <div class="product-card-hover">
+                            <span class="btn btn-primary btn-sm px-3">Ver producto</span>
                         </div>
+                    </div>
+                    <?php if (empty($p['imagenes'][0])): ?>
+                    <div class="product-card-img-placeholder"><i class="bi bi-box-seam"></i></div>
+                    <?php endif; ?>
+                    <div class="product-card-body">
+                        <div class="product-cat-badge"><?= e($p['categoria']) ?></div>
+                        <div class="product-card-title"><?= e($p['nombre']) ?></div>
                     </div>
                 </a>
             </div>
             <?php endforeach; ?>
         </div>
-        <div class="text-center mt-4">
-            <a href="<?= APP_URL ?>/productos" class="btn btn-primary px-5">Ver todos los productos</a>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     CÓMO FUNCIONA
+════════════════════════════════════════════════════════════ -->
+<section class="py-5 bg-light-ie">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <span class="section-label">Proceso de compra</span>
+                <h2 class="section-title">De la medida al producto terminado en 3 pasos</h2>
+                <p class="section-lead mb-4">
+                    Sin complicaciones. Cotiza en línea, confirmamos detalles y producimos tu pedido con la precisión que tu producto merece.
+                </p>
+                <a href="<?= APP_URL ?>/cotizador" class="btn btn-primary px-4">
+                    <i class="bi bi-calculator me-2"></i>Empezar cotización
+                </a>
+            </div>
+            <div class="col-lg-7">
+                <div class="d-flex flex-column gap-0">
+
+                    <div class="process-step">
+                        <div class="process-num">1</div>
+                        <div>
+                            <h5>Cotiza en línea</h5>
+                            <p>Ingresa las medidas (ancho, alto, solapa, micras) y la cantidad. Recibes el precio al instante.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex ms-5 ps-3"><div class="process-line"></div></div>
+
+                    <div class="process-step">
+                        <div class="process-num">2</div>
+                        <div>
+                            <h5>Confirmamos tu pedido</h5>
+                            <p>Un asesor te contacta para confirmar especificaciones, arte de impresión (si aplica) y condiciones de entrega.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex ms-5 ps-3"><div class="process-line"></div></div>
+
+                    <div class="process-step">
+                        <div class="process-num">3</div>
+                        <div>
+                            <h5>Producción y entrega</h5>
+                            <p>Fabricamos tu pedido con maquinaria de última generación y lo entregamos en CDMX o enviamos a toda la República.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ── CTA COTIZADOR ── -->
+<!-- ════════════════════════════════════════════════════════════
+     CTA STRIP
+════════════════════════════════════════════════════════════ -->
 <section class="cta-strip text-center">
     <div class="container">
-        <h2 class="mb-2">¿Necesitas una cotización?</h2>
-        <p class="mb-4">Usa nuestro cotizador en línea y recibe el precio de tus bolsas al instante.</p>
-        <a href="<?= APP_URL ?>/cotizador" class="btn btn-dark btn-lg px-5 me-2">
-            <i class="bi bi-calculator me-2"></i>Cotizar bolsas
-        </a>
-        <a href="<?= APP_URL ?>/contacto" class="btn btn-outline-dark btn-lg px-5">
-            Contacto directo
-        </a>
+        <span class="section-label">¿Listo para cotizar?</span>
+        <h2 class="section-title on-dark mb-3">Obtén el precio de tus bolsas<br>en menos de 2 minutos</h2>
+        <p class="mb-4">Usa nuestro cotizador y recibe el costo por millar al instante.<br>Sin registro, sin compromiso.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="<?= APP_URL ?>/cotizador" class="btn btn-primary btn-lg px-5">
+                <i class="bi bi-calculator me-2"></i>Cotizar bolsas
+            </a>
+            <a href="<?= APP_URL ?>/contacto" class="btn btn-outline-white btn-lg px-5">
+                Hablar con ventas
+            </a>
+        </div>
     </div>
 </section>
 

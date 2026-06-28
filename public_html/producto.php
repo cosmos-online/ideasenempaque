@@ -48,11 +48,11 @@ foreach ($PRODUCTOS as $s => $r) {
             <!-- Galería -->
             <div class="col-lg-5">
                 <?php if (!empty($p['imagenes'])): ?>
-                <div class="product-gallery mb-3">
+                <div class="mb-3">
                     <img id="product-main-img"
                          src="<?= APP_URL ?>/assets/img/productos/<?= e($p['imagenes'][0]) ?>"
                          alt="<?= e($p['nombre']) ?>"
-                         class="img-fluid rounded shadow-sm">
+                         class="product-gallery-main">
                 </div>
                 <?php if (count($p['imagenes']) > 1): ?>
                 <div class="row g-2">
@@ -60,24 +60,24 @@ foreach ($PRODUCTOS as $s => $r) {
                     <div class="col-3">
                         <img src="<?= APP_URL ?>/assets/img/productos/<?= e($img) ?>"
                              alt="<?= e($p['nombre']) ?> <?= $i+1 ?>"
-                             class="product-gallery-thumb <?= $i === 0 ? 'active' : '' ?>"
+                             class="product-thumb <?= $i === 0 ? 'active' : '' ?>"
                              data-full="<?= APP_URL ?>/assets/img/productos/<?= e($img) ?>">
                     </div>
                     <?php endforeach; ?>
                 </div>
                 <?php endif; ?>
                 <?php else: ?>
-                <div class="product-card-img-placeholder rounded shadow-sm" style="height:300px">
-                    <i class="bi bi-box-seam" style="font-size:5rem"></i>
+                <div class="product-gallery-placeholder">
+                    <i class="bi bi-box-seam"></i>
                 </div>
                 <?php endif; ?>
             </div>
 
             <!-- Info -->
             <div class="col-lg-7">
-                <span class="badge mb-2" style="background:var(--ie-primary); color:#333"><?= e($p['categoria']) ?></span>
-                <h1 class="h2 mb-3"><?= e($p['nombre']) ?></h1>
-                <p class="lead text-muted"><?= e($p['descripcion']) ?></p>
+                <span class="badge-cat mb-2"><?= e($p['categoria']) ?></span>
+                <h1 class="h2 mb-3 mt-2"><?= e($p['nombre']) ?></h1>
+                <p class="text-muted" style="font-size:1rem"><?= e($p['descripcion']) ?></p>
 
                 <hr>
 
@@ -96,20 +96,20 @@ foreach ($PRODUCTOS as $s => $r) {
                     <?php if (!empty($p['pdf'])): ?>
                     <a href="<?= APP_URL ?>/assets/pdf/<?= e($p['pdf']) ?>"
                        target="_blank"
-                       class="btn btn-outline-primary btn-lg px-4">
+                       class="btn btn-outline-navy btn-lg px-4">
                         <i class="bi bi-file-pdf me-2"></i>Ficha técnica
                     </a>
                     <?php endif; ?>
                 </div>
 
                 <!-- Contacto rápido -->
-                <div class="p-4 rounded" style="background:var(--ie-light)">
-                    <p class="small mb-2 fw-bold">¿Tienes preguntas sobre este producto?</p>
+                <div class="p-4 rounded bg-light-ie">
+                    <p class="small mb-2 fw-bold text-navy">¿Tienes preguntas sobre este producto?</p>
                     <a href="tel:+525526303020" class="me-3 text-decoration-none">
-                        <i class="bi bi-telephone me-1" style="color:var(--ie-primary)"></i><?= e(PHONE) ?>
+                        <i class="bi bi-telephone me-1 text-amber"></i><?= e(PHONE) ?>
                     </a>
                     <a href="mailto:<?= e(EMAIL_VENTAS) ?>" class="text-decoration-none">
-                        <i class="bi bi-envelope me-1" style="color:var(--ie-primary)"></i><?= e(EMAIL_VENTAS) ?>
+                        <i class="bi bi-envelope me-1 text-amber"></i><?= e(EMAIL_VENTAS) ?>
                     </a>
                 </div>
             </div>
