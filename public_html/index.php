@@ -66,7 +66,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
         <div class="row align-items-center justify-content-center text-center gy-3">
             <div class="col-6 col-md-3">
                 <div class="stat-item">
-                    <span class="stat-num">+13</span>
+                    <span class="stat-num s-red">+13</span>
                     <span class="stat-label">Años en la industria</span>
                 </div>
             </div>
@@ -75,7 +75,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
             </div>
             <div class="col-6 col-md-3">
                 <div class="stat-item">
-                    <span class="stat-num">21</span>
+                    <span class="stat-num s-cyan">21</span>
                     <span class="stat-label">Tipos de producto</span>
                 </div>
             </div>
@@ -84,7 +84,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
             </div>
             <div class="col-6 col-md-3">
                 <div class="stat-item">
-                    <span class="stat-num">25</span>
+                    <span class="stat-num s-green">25</span>
                     <span class="stat-label">Fichas técnicas</span>
                 </div>
             </div>
@@ -93,7 +93,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
             </div>
             <div class="col-6 col-md-3">
                 <div class="stat-item">
-                    <span class="stat-num">1K</span>
+                    <span class="stat-num s-taupe">1K</span>
                     <span class="stat-label">Piezas desde</span>
                 </div>
             </div>
@@ -104,7 +104,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
 <!-- ════════════════════════════════════════════════════════════
      CATEGORÍAS
 ════════════════════════════════════════════════════════════ -->
-<section class="py-5 bg-light-ie">
+<section class="py-5 bg-taupe-xlight">
     <div class="container">
         <div class="mb-4">
             <span class="section-label">Nuestro catálogo</span>
@@ -113,7 +113,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
         </div>
         <div class="row g-3">
             <div class="col-md-6 col-lg-3">
-                <a href="<?= APP_URL ?>/bolsas-de-sello-lateral" class="cat-card">
+                <a href="<?= APP_URL ?>/bolsas-de-sello-lateral" class="cat-card c-red">
                     <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-s-03-03.jpg')"></div>
                     <div class="cat-card-overlay"></div>
                     <div class="cat-card-body">
@@ -125,7 +125,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                 </a>
             </div>
             <div class="col-md-6 col-lg-3">
-                <a href="<?= APP_URL ?>/productos" class="cat-card">
+                <a href="<?= APP_URL ?>/productos" class="cat-card c-cyan">
                     <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-b-04-03.jpg')"></div>
                     <div class="cat-card-overlay"></div>
                     <div class="cat-card-body">
@@ -137,7 +137,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                 </a>
             </div>
             <div class="col-md-6 col-lg-3">
-                <a href="<?= APP_URL ?>/sobre-con-adhesivo" class="cat-card">
+                <a href="<?= APP_URL ?>/sobre-con-adhesivo" class="cat-card c-green">
                     <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-s-01-03.jpg')"></div>
                     <div class="cat-card-overlay"></div>
                     <div class="cat-card-body">
@@ -149,7 +149,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                 </a>
             </div>
             <div class="col-md-6 col-lg-3">
-                <a href="<?= APP_URL ?>/cintas-para-empaque" class="cat-card">
+                <a href="<?= APP_URL ?>/cintas-para-empaque" class="cat-card c-taupe">
                     <div class="cat-card-bg" style="background-image:url('<?= APP_URL ?>/assets/img/productos/grande-p-01-03.jpg')"></div>
                     <div class="cat-card-overlay"></div>
                     <div class="cat-card-body">
@@ -174,7 +174,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                 <span class="section-label">Más solicitados</span>
                 <h2 class="section-title mb-0">Productos destacados</h2>
             </div>
-            <a href="<?= APP_URL ?>/productos" class="btn btn-outline-navy btn-sm px-4">
+            <a href="<?= APP_URL ?>/productos" class="btn btn-outline-dark-ie btn-sm px-4">
                 Ver todos <i class="bi bi-arrow-right ms-1"></i>
             </a>
         </div>
@@ -225,7 +225,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                 <div class="d-flex flex-column gap-0">
 
                     <div class="process-step">
-                        <div class="process-num">1</div>
+                        <div class="process-num pn-1">1</div>
                         <div>
                             <h5>Cotiza en línea</h5>
                             <p>Ingresa las medidas (ancho, alto, solapa, micras) y la cantidad. Recibes el precio al instante.</p>
@@ -234,7 +234,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                     <div class="d-flex ms-5 ps-3"><div class="process-line"></div></div>
 
                     <div class="process-step">
-                        <div class="process-num">2</div>
+                        <div class="process-num pn-2">2</div>
                         <div>
                             <h5>Confirmamos tu pedido</h5>
                             <p>Un asesor te contacta para confirmar especificaciones, arte de impresión (si aplica) y condiciones de entrega.</p>
@@ -243,7 +243,7 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                     <div class="d-flex ms-5 ps-3"><div class="process-line"></div></div>
 
                     <div class="process-step">
-                        <div class="process-num">3</div>
+                        <div class="process-num pn-3">3</div>
                         <div>
                             <h5>Producción y entrega</h5>
                             <p>Fabricamos tu pedido con maquinaria de última generación y lo entregamos en CDMX o enviamos a toda la República.</p>
