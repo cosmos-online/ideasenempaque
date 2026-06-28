@@ -71,9 +71,6 @@
             <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-1">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= APP_URL ?>/">Inicio</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="<?= APP_URL ?>/quienes-somos">Nosotros</a>
                 </li>
 

@@ -35,11 +35,7 @@ Options -Indexes
     # RewriteCond %{HTTPS} off
     # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # No reescribir archivos o carpetas reales
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-
-    # Páginas estáticas
+    # Páginas estáticas (rutas exactas — nunca capturan /admin/)
     RewriteRule ^quienes-somos/?$  quienes-somos.php  [L]
     RewriteRule ^nosotros/?$       quienes-somos.php  [L]
     RewriteRule ^productos/?$      productos.php       [L]
@@ -47,7 +43,10 @@ Options -Indexes
     RewriteRule ^cotizador/?$      cotizador.php       [L]
     RewriteRule ^gracias/?$        gracias.php         [L]
 
-    # Páginas de producto individuales (slug → producto.php)
+    # Slug de producto — solo si no es archivo real, directorio real, ni ruta /admin/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^(/[^/]+)?/admin(/|$)
     RewriteRule ^([a-z0-9\-]+)/?$  producto.php?slug=$1  [L,QSA]
 </IfModule>
 
