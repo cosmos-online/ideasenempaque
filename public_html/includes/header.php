@@ -82,13 +82,13 @@
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Celofán</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?= APP_URL ?>/bolsas-de-sello-lateral">
-                            <i class="bi bi-bag me-2 text-amber"></i>Bolsas de sello lateral</a></li>
+                            <i class="bi bi-bag me-2 text-red"></i>Bolsas de sello lateral</a></li>
                         <li><a class="dropdown-item" href="<?= APP_URL ?>/bolsas-con-adhesivo-y-cenefa">
-                            <i class="bi bi-bag me-2 text-amber"></i>Bolsas con adhesivo y cenefa</a></li>
+                            <i class="bi bi-bag me-2 text-red"></i>Bolsas con adhesivo y cenefa</a></li>
                         <li><a class="dropdown-item" href="<?= APP_URL ?>/bolsas-de-sello-simplex">
-                            <i class="bi bi-bag me-2 text-amber"></i>Bolsas de sello simplex</a></li>
+                            <i class="bi bi-bag me-2 text-red"></i>Bolsas de sello simplex</a></li>
                         <li><a class="dropdown-item" href="<?= APP_URL ?>/bolsas-de-sello-fondo">
-                            <i class="bi bi-bag me-2 text-amber"></i>Bolsas de sello fondo</a></li>
+                            <i class="bi bi-bag me-2 text-red"></i>Bolsas de sello fondo</a></li>
                     </ul>
                 </li>
 
@@ -138,7 +138,7 @@
 
             <!-- CTA derecha -->
             <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
-                <a href="tel:+525526303020" class="nav-link d-lg-none" style="color:rgba(255,255,255,.6)!important">
+                <a href="tel:+525526303020" class="nav-link d-lg-none" style="color:var(--charcoal)!important">
                     <i class="bi bi-telephone me-1"></i><?= e(PHONE) ?>
                 </a>
                 <a href="<?= APP_URL ?>/cotizador" class="btn btn-primary btn-sm px-3">

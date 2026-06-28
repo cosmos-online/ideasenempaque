@@ -96,20 +96,20 @@ foreach ($PRODUCTOS as $s => $r) {
                     <?php if (!empty($p['pdf'])): ?>
                     <a href="<?= APP_URL ?>/assets/pdf/<?= e($p['pdf']) ?>"
                        target="_blank"
-                       class="btn btn-outline-navy btn-lg px-4">
+                       class="btn btn-outline-dark-ie btn-lg px-4">
                         <i class="bi bi-file-pdf me-2"></i>Ficha técnica
                     </a>
                     <?php endif; ?>
                 </div>
 
                 <!-- Contacto rápido -->
-                <div class="p-4 rounded bg-light-ie">
-                    <p class="small mb-2 fw-bold text-navy">¿Tienes preguntas sobre este producto?</p>
+                <div class="p-4 rounded bg-taupe-xlt border">
+                    <p class="small mb-2 fw-bold">¿Tienes preguntas sobre este producto?</p>
                     <a href="tel:+525526303020" class="me-3 text-decoration-none">
-                        <i class="bi bi-telephone me-1 text-amber"></i><?= e(PHONE) ?>
+                        <i class="bi bi-telephone me-1 text-red"></i><?= e(PHONE) ?>
                     </a>
                     <a href="mailto:<?= e(EMAIL_VENTAS) ?>" class="text-decoration-none">
-                        <i class="bi bi-envelope me-1 text-amber"></i><?= e(EMAIL_VENTAS) ?>
+                        <i class="bi bi-envelope me-1 text-red"></i><?= e(EMAIL_VENTAS) ?>
                     </a>
                 </div>
             </div>
@@ -119,7 +119,7 @@ foreach ($PRODUCTOS as $s => $r) {
 
 <!-- Productos relacionados -->
 <?php if (!empty($relacionados)): ?>
-<section class="py-5" style="background:var(--ie-light)">
+<section class="py-5 bg-taupe-lt">
     <div class="container">
         <h2 class="section-title">Productos relacionados</h2>
         <div class="row g-3">

@@ -40,7 +40,7 @@
                         <li><a href="<?= APP_URL ?>/bolsas-tipo-pouch">Bolsas tipo Pouch</a></li>
                         <li><a href="<?= APP_URL ?>/bolsas-de-papel-kraft">Bolsas de papel kraft</a></li>
                         <li><a href="<?= APP_URL ?>/cintas-para-empaque">Cintas para empaque</a></li>
-                        <li><a href="<?= APP_URL ?>/productos" style="color:var(--amber)">Ver todos →</a></li>
+                        <li><a href="<?= APP_URL ?>/productos" class="highlight">Ver todos →</a></li>
                     </ul>
                 </div>
 
@@ -50,12 +50,12 @@
                     <ul class="footer-links">
                         <li>
                             <a href="tel:+525526303020">
-                                <i class="bi bi-telephone me-2" style="color:var(--amber)"></i><?= e(PHONE) ?>
+                                <i class="bi bi-telephone me-2" style="color:var(--red)"></i><?= e(PHONE) ?>
                             </a>
                         </li>
                         <li>
                             <a href="mailto:<?= e(EMAIL_VENTAS) ?>">
-                                <i class="bi bi-envelope me-2" style="color:var(--amber)"></i><?= e(EMAIL_VENTAS) ?>
+                                <i class="bi bi-envelope me-2" style="color:var(--red)"></i><?= e(EMAIL_VENTAS) ?>
                             </a>
                         </li>
                         <li class="mt-3">

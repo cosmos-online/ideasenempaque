@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (href === path) link.classList.add('active');
     });
 
-    // ── .text-amber en iconos del navbar (CSS var no se aplica al SVG) ──
-    document.querySelectorAll('.text-amber').forEach(function (el) {
-        el.style.color = 'var(--amber)';
+    // ── .text-red (forzar var para SVG) ──
+    document.querySelectorAll('.text-red').forEach(function (el) {
+        el.style.color = 'var(--red)';
     });
 
 });
