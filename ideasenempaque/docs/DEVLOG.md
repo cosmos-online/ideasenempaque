@@ -45,3 +45,39 @@
   **Motivo:** El cliente no solicitó migración
 
 ---
+
+## 2026-06-27 — Cosmos Online — Sesión 2
+**Branch:** feature/sitio-publico
+**Estado:** ✅ Completado y pusheado
+
+### Completado
+- [x] Branch `feature/sitio-publico` creado
+- [x] Assets copiados de Sitio Viejo: imágenes productos, hero, PDFs fichas técnicas
+- [x] `.htaccess` actualizado con RewriteRules para URLs limpias y producto.php?slug=
+- [x] `assets/css/style.css` — estilos completos (colores #D0D205, Bootstrap overrides, navbar, hero, cards, cotizador, footer, WhatsApp FAB)
+- [x] `assets/js/main.js` — galería de producto + nav activo
+- [x] `includes/config.php` — carga .env, constantes, helper e()
+- [x] `includes/header.php` — topbar + navbar Bootstrap con 4 dropdowns + botón Cotizar
+- [x] `includes/footer.php` — 3 columnas + redes sociales + WhatsApp FAB
+- [x] `includes/productos-data.php` — array completo de 21 productos con slug, categoría, imágenes, PDF
+- [x] `includes/mailer.php` — sendMail() + mailTemplate() usando mail() nativo
+- [x] `index.php` — home completo: hero carousel 3 slides, intro, features, 8 productos destacados, CTA
+- [x] `quienes-somos.php` — historia, qué fabricamos, por qué elegirnos
+- [x] `productos.php` — catálogo agrupado por categoría con grid responsive
+- [x] `producto.php` — template único con galería, thumbnails, PDF download, cotizar CTA, relacionados
+- [x] `contacto.php` — formulario con CSRF, validación, mail(), guarda en cosmos_mensajes
+- [x] `gracias.php` — página de confirmación post-form
+- [x] `cotizador.php` — algoritmo exacto preservado, CSRF, guarda en cosmos_cotizaciones, mails
+- [x] Commit y push a `feature/sitio-publico`
+
+### Pendiente
+- [ ] Módulos admin: CRUD completo de productos (crear, editar, eliminar)
+- [ ] Módulo admin: ver detalle de cotizaciones
+- [ ] Configurar WHATSAPP_NUMBER en .env del servidor
+
+### Decisiones técnicas
+- **Decisión:** Un solo producto.php con routing por `?slug=` en lugar de 19+ archivos individuales
+- **Decisión:** mail() nativo en lugar de PHPMailer (sin Composer, cPanel lo tiene configurado)
+- **Decisión:** Color primario #D0D205 extraído de `Sitio Viejo/color/default.css`
+
+---

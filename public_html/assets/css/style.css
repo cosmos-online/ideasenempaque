@@ -1,11 +1,305 @@
-/* Ideas Empaque e Impresión — Estilos globales */
-/* Paleta basada en sitio viejo: color/default.css */
+/* ================================================================
+   Ideas Empaque e Impresión — Estilos globales
+   Cosmos Online | 2026
+   Paleta: #D0D205 (acento) + #3E3E3E (oscuro)
+   ================================================================ */
 
 :root {
-    --ie-primary:    #e8700a;  /* naranja principal del sitio viejo */
-    --ie-dark:       #333333;
-    --ie-light:      #f8f8f8;
-    --ie-border:     #dddddd;
+    --ie-primary:  #D0D205;
+    --ie-dark:     #3E3E3E;
+    --ie-darker:   #2a2a2a;
+    --ie-light:    #f8f8f6;
+    --ie-border:   #e0e0e0;
+    --ie-text:     #444444;
 }
 
-/* Tipografías: Google Fonts — Open Sans (body) + Handlee (acento) */
+/* ── Base ── */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--ie-text);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--ie-dark);
+}
+
+a { color: var(--ie-dark); text-decoration: none; }
+a:hover { color: var(--ie-primary); }
+
+/* ── Bootstrap overrides ── */
+.btn-primary {
+    background-color: var(--ie-primary);
+    border-color: var(--ie-primary);
+    color: #333;
+    font-weight: 600;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #b8b804;
+    border-color: #b8b804;
+    color: #222;
+}
+.btn-outline-primary {
+    border-color: var(--ie-primary);
+    color: var(--ie-dark);
+}
+.btn-outline-primary:hover {
+    background-color: var(--ie-primary);
+    border-color: var(--ie-primary);
+    color: #333;
+}
+
+/* ── Topbar ── */
+.topbar {
+    background-color: var(--ie-dark);
+}
+.topbar-link {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    transition: color .2s;
+}
+.topbar-link:hover { color: var(--ie-primary); }
+
+/* ── Navbar ── */
+.navbar { border-bottom: 3px solid var(--ie-primary); }
+.navbar-brand img { transition: opacity .2s; }
+.navbar-brand img:hover { opacity: .85; }
+.nav-link {
+    font-weight: 600;
+    font-size: .9rem;
+    color: var(--ie-dark) !important;
+    transition: color .2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--ie-primary) !important; }
+.dropdown-menu { border: none; box-shadow: 0 4px 20px rgba(0,0,0,.1); border-radius: 0 0 8px 8px; }
+.dropdown-item { font-size: .88rem; padding: .5rem 1.25rem; }
+.dropdown-item:hover { background-color: var(--ie-primary); color: #333; }
+
+/* ── Hero / Carousel ── */
+.hero-carousel .carousel-item {
+    height: 520px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero-carousel .carousel-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 100%);
+}
+.hero-carousel .carousel-caption {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 8%;
+    right: auto;
+    transform: translateY(-50%);
+    text-align: left;
+    bottom: auto;
+}
+.hero-carousel .carousel-caption h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.hero-carousel .carousel-caption p {
+    color: rgba(255,255,255,.9);
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--ie-primary);
+    border-radius: 50%;
+    padding: 1rem;
+    background-size: 50%;
+}
+
+/* ── Page header / breadcrumb ── */
+.page-header {
+    background: var(--ie-dark);
+    padding: 2.5rem 0 1.5rem;
+    color: #fff;
+}
+.page-header h1 { color: #fff; font-size: 1.8rem; margin: 0; }
+.breadcrumb { background: none; padding: 0; margin: .5rem 0 0; }
+.breadcrumb-item a { color: var(--ie-primary); }
+.breadcrumb-item.active { color: rgba(255,255,255,.7); }
+.breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,.4); }
+
+/* ── Sección intro ── */
+.section-title {
+    font-size: 1.6rem;
+    position: relative;
+    padding-bottom: .75rem;
+    margin-bottom: 1.5rem;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 48px;
+    height: 3px;
+    background: var(--ie-primary);
+}
+.section-title.text-center::after { left: 50%; transform: translateX(-50%); }
+
+/* ── Cards de producto ── */
+.product-card {
+    border: 1px solid var(--ie-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow .2s, transform .2s;
+    height: 100%;
+}
+.product-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,.12);
+    transform: translateY(-3px);
+}
+.product-card-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    background: var(--ie-light);
+}
+.product-card-img-placeholder {
+    height: 200px;
+    background: var(--ie-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 3rem;
+}
+.product-card .card-body { padding: 1.25rem; }
+.product-card .card-title { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+.product-card .card-text { font-size: .85rem; color: #666; }
+
+/* ── Galería de producto ── */
+.product-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.product-gallery-thumb {
+    height: 90px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: .7;
+    transition: opacity .2s;
+    border: 2px solid transparent;
+}
+.product-gallery-thumb:hover,
+.product-gallery-thumb.active {
+    opacity: 1;
+    border-color: var(--ie-primary);
+}
+
+/* ── CTA strip ── */
+.cta-strip {
+    background: var(--ie-primary);
+    padding: 3rem 0;
+}
+.cta-strip h2 { color: var(--ie-dark); }
+.cta-strip p { color: #555; }
+
+/* ── Formularios ── */
+.form-control:focus, .form-select:focus {
+    border-color: var(--ie-primary);
+    box-shadow: 0 0 0 .2rem rgba(208,210,5,.25);
+}
+.form-label { font-weight: 600; font-size: .9rem; }
+
+/* ── Cotizador resultado ── */
+.cotizador-result {
+    background: var(--ie-light);
+    border: 2px solid var(--ie-primary);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+.cotizador-result .precio-millar {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ie-dark);
+}
+.cotizador-result .precio-total {
+    font-size: 1.3rem;
+    color: #555;
+}
+
+/* ── Footer ── */
+.footer {
+    background: var(--ie-darker);
+    color: rgba(255,255,255,.7);
+}
+.footer-heading {
+    color: var(--ie-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+.footer-text { color: rgba(255,255,255,.6); }
+.footer-links a {
+    color: rgba(255,255,255,.65);
+    display: block;
+    padding: .2rem 0;
+    transition: color .2s;
+}
+.footer-links a:hover { color: var(--ie-primary); }
+.footer-links li { margin-bottom: .25rem; }
+.footer-links .bi { color: var(--ie-primary); }
+.footer-social { color: rgba(255,255,255,.65); transition: color .2s; }
+.footer-social:hover { color: var(--ie-primary); }
+.footer-bottom {
+    background: rgba(0,0,0,.3);
+    color: rgba(255,255,255,.5);
+    font-size: .82rem;
+}
+.footer-bottom a { color: var(--ie-primary); }
+
+/* ── WhatsApp FAB ── */
+.whatsapp-fab {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    z-index: 1050;
+    transition: transform .2s, box-shadow .2s;
+}
+.whatsapp-fab:hover {
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,.3);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 768px) {
+    .hero-carousel .carousel-item { height: 340px; }
+    .hero-carousel .carousel-caption h2 { font-size: 1.5rem; }
+    .hero-carousel .carousel-caption { left: 5%; right: 5%; }
+}
+@media (max-width: 375px) {
+    .hero-carousel .carousel-item { height: 260px; }
+    .hero-carousel .carousel-caption h2 { font-size: 1.2rem; }
+}

@@ -27,12 +27,29 @@ Options -Indexes
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# Forzar HTTPS (descomentar cuando el SSL esté activo en producción)
-# <IfModule mod_rewrite.c>
-#     RewriteEngine On
-#     RewriteCond %{HTTPS} off
-#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-# </IfModule>
+# URLs limpias y enrutamiento
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Forzar HTTPS (descomentar cuando SSL esté activo)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # No reescribir archivos o carpetas reales
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Páginas estáticas
+    RewriteRule ^quienes-somos/?$  quienes-somos.php  [L]
+    RewriteRule ^nosotros/?$       quienes-somos.php  [L]
+    RewriteRule ^productos/?$      productos.php       [L]
+    RewriteRule ^contacto/?$       contacto.php        [L]
+    RewriteRule ^cotizador/?$      cotizador.php       [L]
+    RewriteRule ^gracias/?$        gracias.php         [L]
+
+    # Páginas de producto individuales (slug → producto.php)
+    RewriteRule ^([a-z0-9\-]+)/?$  producto.php?slug=$1  [L,QSA]
+</IfModule>
 
 # PHP 7.4 (descomentar si el servidor requiere especificarlo)
 # AddHandler application/x-httpd-php74 .php
