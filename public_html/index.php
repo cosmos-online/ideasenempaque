@@ -169,14 +169,13 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
                         <?php if (!empty($p['imagenes'][0])): ?>
                         <img src="<?= APP_URL ?>/assets/img/productos/<?= e($p['imagenes'][0]) ?>"
                              alt="<?= e($p['nombre']) ?>" loading="lazy">
+                        <?php else: ?>
+                        <div class="product-card-no-img"><i class="bi bi-box-seam"></i></div>
                         <?php endif; ?>
                         <div class="product-card-hover">
                             <span class="btn btn-primary btn-sm px-3">Ver producto</span>
                         </div>
                     </div>
-                    <?php if (empty($p['imagenes'][0])): ?>
-                    <div class="product-card-img-placeholder"><i class="bi bi-box-seam"></i></div>
-                    <?php endif; ?>
                     <div class="product-card-body">
                         <div class="product-cat-badge"><?= e($p['categoria']) ?></div>
                         <div class="product-card-title"><?= e($p['nombre']) ?></div>
