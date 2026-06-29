@@ -1,4 +1,12 @@
 
+<!-- Selector de paleta (herramienta de previsualización) -->
+<div class="palette-switcher" id="paletteSwitcher" title="Cambiar paleta de colores">
+    <span class="palette-label">Paleta</span>
+    <button class="palette-swatch active" data-palette="rojo"   style="background:#EE3927" title="Rojo Carbón"></button>
+    <button class="palette-swatch"        data-palette="cian"   style="background:#52C7D1" title="Cian Marino"></button>
+    <button class="palette-swatch"        data-palette="verde"  style="background:#87D338" title="Verde Kraft"></button>
+</div>
+
 <!-- WhatsApp FAB -->
 <?php if (WA_NUM): ?>
 <a href="https://wa.me/<?= e(WA_NUM) ?>?text=Hola%2C%20me%20interesa%20cotizar%20bolsas%20de%20empaque"

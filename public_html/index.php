@@ -63,39 +63,22 @@ $destacados = array_slice($PRODUCTOS, 0, 8, true);
 ════════════════════════════════════════════════════════════ -->
 <div class="stats-band">
     <div class="container">
-        <div class="row align-items-center justify-content-center text-center gy-3">
-            <div class="col-6 col-md-3">
-                <div class="stat-item">
-                    <span class="stat-num s-red">+13</span>
-                    <span class="stat-label">Años en la industria</span>
-                </div>
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-num">+13</span>
+                <span class="stat-label">Años en la industria</span>
             </div>
-            <div class="col-auto d-none d-md-block">
-                <div class="stat-sep" style="height:48px"></div>
+            <div class="stat-item">
+                <span class="stat-num">21</span>
+                <span class="stat-label">Tipos de producto</span>
             </div>
-            <div class="col-6 col-md-3">
-                <div class="stat-item">
-                    <span class="stat-num s-cyan">21</span>
-                    <span class="stat-label">Tipos de producto</span>
-                </div>
+            <div class="stat-item">
+                <span class="stat-num">25</span>
+                <span class="stat-label">Fichas técnicas</span>
             </div>
-            <div class="col-auto d-none d-md-block">
-                <div class="stat-sep" style="height:48px"></div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="stat-item">
-                    <span class="stat-num s-green">25</span>
-                    <span class="stat-label">Fichas técnicas</span>
-                </div>
-            </div>
-            <div class="col-auto d-none d-md-block">
-                <div class="stat-sep" style="height:48px"></div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="stat-item">
-                    <span class="stat-num s-taupe">1K</span>
-                    <span class="stat-label">Piezas desde</span>
-                </div>
+            <div class="stat-item">
+                <span class="stat-num">1,000</span>
+                <span class="stat-label">Piezas mínimo</span>
             </div>
         </div>
     </div>
