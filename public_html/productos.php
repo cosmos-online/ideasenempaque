@@ -3,7 +3,7 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/productos-data.php';
 
 $pageTitle = 'Productos — Ideas Empaque e Impresión';
-$pageDesc  = 'Catálogo completo de bolsas de polipropileno, bolsas de papel kraft, ziplock, cintas para empaque y más. Solicita tu cotización.';
+$pageDesc  = 'Catálogo completo de bolsas de polipropileno, papel kraft, ziplock, cintas para empaque y más. Solicita tu cotización.';
 
 // Agrupar por categoría
 $porCategoria = [];
@@ -28,32 +28,37 @@ foreach ($PRODUCTOS as $slug => $p) {
     </div>
 </div>
 
+<!-- Catálogo -->
 <section class="py-5">
     <div class="container">
 
         <?php foreach ($porCategoria as $categoria => $items): ?>
-        <div class="mb-5">
-            <h2 class="section-title mb-4"><?= e($categoria) ?></h2>
+        <div class="mb-5 pb-2">
+
+            <!-- Separador de categoría -->
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <h2 class="section-heading mb-0"><?= e($categoria) ?></h2>
+                <span class="badge-cat"><?= count($items) ?> productos</span>
+            </div>
+
             <div class="row g-3">
                 <?php foreach ($items as $slug => $p): ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= APP_URL ?>/<?= e($slug) ?>" class="text-decoration-none">
-                        <div class="product-card bg-white">
+                    <a href="<?= APP_URL ?>/<?= e($slug) ?>" class="product-card">
+                        <div class="product-card-img">
                             <?php if (!empty($p['imagenes'][0])): ?>
                             <img src="<?= APP_URL ?>/assets/img/productos/<?= e($p['imagenes'][0]) ?>"
                                  alt="<?= e($p['nombre']) ?>"
-                                 class="product-card-img"
                                  loading="lazy">
                             <?php else: ?>
-                            <div class="product-card-img-placeholder">
-                                <i class="bi bi-box-seam"></i>
-                            </div>
+                            <div class="product-card-no-img"><i class="bi bi-box-seam"></i></div>
                             <?php endif; ?>
-                            <div class="card-body">
-                                <h6 class="card-title"><?= e($p['nombre']) ?></h6>
-                                <p class="card-text"><?= e($p['desc_corta']) ?></p>
-                                <span class="btn btn-sm btn-outline-primary mt-1">Ver más</span>
+                            <div class="product-card-hover">
+                                <span class="btn btn-primary btn-sm px-3">Ver producto</span>
                             </div>
+                        </div>
+                        <div class="product-card-body">
+                            <div class="product-card-title"><?= e($p['nombre']) ?></div>
                         </div>
                     </a>
                 </div>
@@ -67,10 +72,17 @@ foreach ($PRODUCTOS as $slug => $p) {
 
 <!-- CTA -->
 <section class="cta-strip text-center">
-    <div class="container">
-        <h2 class="mb-2">¿No encuentras lo que buscas?</h2>
-        <p class="mb-4">Contáctanos — fabricamos a medida para tu empresa.</p>
-        <a href="<?= APP_URL ?>/contacto" class="btn btn-dark btn-lg px-5">Contactar a ventas</a>
+    <div class="container position-relative" style="z-index:2">
+        <h2 class="section-heading mb-3">¿No encuentras lo que buscas?</h2>
+        <p class="mb-4">Fabricamos a medida para tu empresa. Contáctanos y platicamos.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="<?= APP_URL ?>/cotizador" class="btn-hero">
+                <i class="bi bi-calculator"></i> Cotizar ahora
+            </a>
+            <a href="<?= APP_URL ?>/contacto" class="btn btn-outline-white btn-lg px-4">
+                Hablar con ventas
+            </a>
+        </div>
     </div>
 </section>
 
